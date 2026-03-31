@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const skills = [
-  "Premiere Pro", "After Effects", "CapCut", "Color Grading", "Motion Graphics", "Sound Design", "Pacing & Rhythm", "Narrative Structure"
+  "Premiere Pro", "After Effects", "CapCut","DaVinci Resolve", "Photoshop", "VFX", "Subtitles", "Color Grading", "Motion Graphics", "Sound Design", "Pacing & Rhythm", "Narrative Structure"
 ];
 
 const AboutSection = () => {
