@@ -1,8 +1,33 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { 
+  Video, 
+  Layers, 
+  Scissors, 
+  Palette, 
+  Image, 
+  Sparkles, 
+  Type, 
+  Aperture, 
+  Activity, 
+  Music, 
+  Clock, 
+  Layout 
+} from 'lucide-react';
 
 const skills = [
-  "Premiere Pro", "After Effects", "CapCut","DaVinci Resolve", "Photoshop", "VFX", "Subtitles", "Color Grading", "Motion Graphics", "Sound Design", "Pacing & Rhythm", "Narrative Structure"
+  { name: "Premiere Pro", icon: Video },
+  { name: "After Effects", icon: Layers },
+  { name: "CapCut", icon: Scissors },
+  { name: "DaVinci Resolve", icon: Palette },
+  { name: "Photoshop", icon: Image },
+  { name: "VFX", icon: Sparkles },
+  { name: "Subtitles", icon: Type },
+  { name: "Color Grading", icon: Aperture },
+  { name: "Motion Graphics", icon: Activity },
+  { name: "Sound Design", icon: Music },
+  { name: "Pacing & Rhythm", icon: Clock },
+  { name: "Narrative Structure", icon: Layout },
 ];
 
 const AboutSection = () => {
@@ -59,17 +84,18 @@ const AboutSection = () => {
               
               <h3 className="font-sans text-xs uppercase tracking-widest text-accent mb-8">Toolkit & Expertise</h3>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {skills.map((skill, i) => (
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.3 + (i * 0.1) }}
+                    transition={{ delay: 0.3 + (i * 0.05) }}
                     key={i} 
-                    className="px-4 py-3 bg-background border border-white/5 text-sm font-medium hover:border-accent hover:text-accent transition-colors duration-300 font-sans tracking-wide"
+                    className="flex items-center gap-3 px-5 py-4 bg-background border border-white/5 text-sm font-medium hover:border-accent hover:text-accent transition-all duration-500 font-sans tracking-wide group/skill shadow-sm hover:shadow-accent/10"
                   >
-                    {skill}
+                    <skill.icon size={16} className="text-accent/60 group-hover/skill:text-accent group-hover/skill:scale-110 transition-all duration-500" />
+                    <span>{skill.name}</span>
                   </motion.div>
                 ))}
               </div>
