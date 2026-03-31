@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Mail } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone } from 'lucide-react';
 
 // Youtube & Instagram not exported by installed lucide-react — inline SVGs used
 const YoutubeIcon = ({ size = 16, className = '' }) => (
@@ -47,11 +47,19 @@ const ContactSection = () => {
           className="flex flex-col md:flex-row gap-6 mb-32"
         >
           <a 
-            href="mailto:contact@0filter.tv" // Example placeholder mail
+            href="mailto:saquibshaikh471@gmail.com"
             className="group flex items-center justify-center gap-3 bg-primary text-background px-8 py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-accent transition-colors duration-500"
           >
             <Mail size={16} />
             Email Me
+          </a>
+
+          <a 
+            href="tel:+919325149747"
+            className="group flex items-center justify-center gap-3 border border-white/10 text-primary px-8 py-5 font-bold uppercase tracking-[0.2em] text-xs hover:border-accent hover:text-accent transition-all duration-500"
+          >
+            <Phone size={16} />
+            Call Me
           </a>
         </motion.div>
         
