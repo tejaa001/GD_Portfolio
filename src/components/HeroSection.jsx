@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDownRight } from 'lucide-react';
+import { ArrowDownRight, Download } from 'lucide-react';
 
 const stagger = {
   hidden: {},
@@ -33,77 +33,99 @@ const HeroSection = () => {
     offset: ['start start', 'end start'],
   });
 
-  const imgY = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.15]);
+  const abstractY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const abstractScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen w-full overflow-hidden"
+      className="relative top-20 h-screen w-full overflow-hidden flex items-center pt-20"
     >
       {/* ── LAYER 0: Background texture ── */}
       <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 70% 40%, rgba(0,240,255,0.03) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(0,240,255,0.02) 0%, transparent 50%)',
+            'radial-gradient(circle at 70% 40%, rgba(124, 92, 252, 0.05) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(124, 92, 252, 0.03) 0%, transparent 50%)',
         }}
       />
 
-      {/* ── LAYER 1: "STORIES" background watermark ── */}
+      {/* ── LAYER 1: "DESIGN" background watermark ── */}
       <motion.div
         style={{ y: textY, opacity: heroOpacity }}
         className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none select-none"
       >
         <span
-          className="font-display text-[28vw] md:text-[22vw] font-bold uppercase tracking-tighter"
+          className="font-display text-[26vw] md:text-[20vw] font-bold uppercase tracking-tighter"
           style={{
-            opacity: 0.04,
-            WebkitTextStroke: '1px rgba(255,255,255,0.06)',
+            opacity: 0.03,
+            WebkitTextStroke: '1px rgba(255,255,255,0.08)',
             color: 'transparent',
           }}
         >
-          Stories
+          Design
         </span>
       </motion.div>
 
-      {/* ── LAYER 2: Portrait image with cinematic treatment ── */}
+      {/* ── LAYER 2: Abstract gradient art (replacing portrait) ── */}
       <motion.div
-        style={{ y: imgY, opacity: heroOpacity }}
-        className="absolute inset-0 z-[2] flex justify-end pointer-events-none"
+        style={{ y: abstractY, scale: abstractScale, opacity: heroOpacity }}
+        className="absolute inset-0 z-[2] flex justify-end items-center pointer-events-none overflow-hidden"
       >
-        <div className="relative w-full md:w-[55%] h-full overflow-hidden">
-          {/* Cinematic slow-zoom image */}
-          <motion.img
-            src="/SaquibPic.png"
-            alt="Saquib Shaikh"
-            style={{ scale: imgScale }}
-            className="w-full h-full object-cover object-[center_15%] opacity-50 mix-blend-lighten filter grayscale contrast-[1.15]"
-          />
-
-          {/* Rim light / edge glow */}
-          <div
-            className="absolute inset-0"
+        <div className="relative w-full md:w-[60%] h-full flex items-center justify-center translate-x-1/4 md:translate-x-0">
+          {/* Main abstract glowing orb */}
+          <motion.div 
+            animate={{ 
+              rotate: 360,
+              scale: [1, 1.05, 1],
+            }}
+            transition={{ 
+              rotate: { duration: 25, ease: "linear", repeat: Infinity },
+              scale: { duration: 8, ease: "easeInOut", repeat: Infinity }
+            }}
+            className="absolute w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full"
             style={{
-              background:
-                'radial-gradient(ellipse at 65% 30%, rgba(0,240,255,0.08) 0%, transparent 55%)',
+              background: 'radial-gradient(circle at 30% 30%, rgba(124, 92, 252, 0.4), rgba(60, 20, 180, 0.1) 60%, transparent 80%)',
+              filter: 'blur(60px)',
+            }}
+          />
+          
+          {/* Secondary smaller orb */}
+          <motion.div 
+            animate={{ 
+              rotate: -360,
+              x: [0, 50, 0],
+              y: [0, -50, 0]
+            }}
+            transition={{ 
+              rotate: { duration: 20, ease: "linear", repeat: Infinity },
+              x: { duration: 10, ease: "easeInOut", repeat: Infinity },
+              y: { duration: 12, ease: "easeInOut", repeat: Infinity }
+            }}
+            className="absolute w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full translate-x-20 -translate-y-20"
+            style={{
+              background: 'radial-gradient(circle at 70% 70%, rgba(0, 240, 255, 0.15), transparent 70%)',
+              filter: 'blur(50px)',
             }}
           />
 
-          {/* Left fade to background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B0B0B] via-[#0B0B0B]/70 to-transparent" />
-          {/* Bottom fade */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-[#0B0B0B]/40" />
-          {/* Top subtle vignette */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/50 via-transparent to-transparent" />
+          {/* Grid overlay for tech feel */}
+          <div className="absolute inset-0 opacity-[0.15]" 
+               style={{ 
+                 backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+                 backgroundSize: '40px 40px',
+                 maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 70%)',
+                 WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 70%)'
+               }} 
+          />
         </div>
       </motion.div>
 
-      {/* ── LAYER 3: Film grain (very subtle) ── */}
+      {/* ── LAYER 3: Film grain / Noise ── */}
       <div
-        className="absolute inset-0 z-[3] pointer-events-none opacity-[0.035]"
+        className="absolute inset-0 z-[3] pointer-events-none opacity-[0.04]"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E\")",
@@ -114,7 +136,7 @@ const HeroSection = () => {
       {/* ── LAYER 4: Foreground content ── */}
       <motion.div
         style={{ opacity: heroOpacity }}
-        className="relative z-10 h-full w-full flex flex-col justify-end pb-16 md:pb-20 px-6 md:px-12"
+        className="relative z-10 h-full w-full flex flex-col justify-center pb-16 md:pb-20 px-6 md:px-12"
       >
         <div className="w-full max-w-7xl mx-auto">
           <motion.div
@@ -129,44 +151,43 @@ const HeroSection = () => {
               className="font-sans text-accent tracking-[0.3em] uppercase text-[10px] md:text-xs font-semibold mb-6 md:mb-8 flex items-center gap-3"
             >
               <span className="w-10 h-px bg-accent/60" />
-              Director's Cut
+              Frontend & UI Designer
             </motion.span>
 
-            {/* Main headline — refined hierarchy */}
+            {/* Main headline — modern UI focused */}
             <motion.h1
               variants={fadeUp}
-              className="font-display text-[11vw] md:text-[6.5vw] lg:text-[7rem] xl:text-[8.5rem] font-bold leading-[0.9] md:leading-[0.88] tracking-tighter uppercase"
+              className="font-display text-[11vw] md:text-[6vw] lg:text-[6.5rem] xl:text-[8rem] font-bold leading-[1] md:leading-[0.9] tracking-tighter uppercase"
             >
-              <span className="block font-medium opacity-90">Crafting</span>
+              <span className="block font-medium opacity-90">Designing</span>
               <span className="block mt-1 md:mt-2">
                 <span className="text-transparent border-text-white opacity-60">
-                  Stories
+                  Interfaces
                 </span>{' '}
-                Through
+                That
               </span>
-              <span className="block mt-1 md:mt-2 italic font-light text-accent/90 drop-shadow-[0_0_30px_rgba(0,240,255,0.25)]">
-                Edits
+              <span className="block mt-1 md:mt-2 italic font-light text-accent/90 drop-shadow-[0_0_30px_rgba(124,92,252,0.3)]">
+                Convert.
               </span>
             </motion.h1>
 
             {/* Divider + description + CTAs */}
             <motion.div
               variants={fadeIn}
-              className="mt-10 md:mt-14 border-t border-white/8 pt-8 flex flex-col gap-8 max-w-xl"
+              className="mt-10 md:mt-12 border-t border-white/10 pt-8 flex flex-col gap-8 max-w-xl"
             >
               <p className="text-muted/80 font-light text-base md:text-lg leading-relaxed tracking-wide">
-                Professional Video Editor specializing in cinematic content,
-                dynamic reels, and high-impact brand storytelling.
+                Creative and detail-oriented Frontend Developer & UI Designer passionate about crafting engaging user experiences, clean layouts, and visually impactful digital platforms.
               </p>
 
-              {/* CTAs — aligned left with content */}
+              {/* CTAs */}
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#work"
                   className="group relative flex items-center justify-center gap-2.5 bg-primary text-background px-7 py-4 font-semibold uppercase tracking-[0.15em] text-xs overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(250,250,250,0.15)] active:scale-[0.97]"
                 >
                   <span className="relative z-10 flex items-center gap-2.5">
-                    View Work
+                    View My Work
                     <ArrowDownRight
                       size={16}
                       className="transition-transform duration-300 group-hover:-rotate-45"
@@ -176,10 +197,12 @@ const HeroSection = () => {
                 </a>
 
                 <a
-                  href="#contact"
-                  className="group flex items-center justify-center gap-2.5 border border-white/15 bg-transparent text-primary/90 px-7 py-4 font-semibold uppercase tracking-[0.15em] text-xs transition-all duration-500 hover:border-accent/60 hover:text-accent hover:shadow-[0_0_20px_rgba(0,240,255,0.08)] active:scale-[0.97]"
+                  href="/Tejas_BhaleraoGD.pdf"
+                  download="Tejas_Bhalerao_Resume.pdf"
+                  className="group flex items-center justify-center gap-2.5 border border-white/15 bg-transparent text-primary/90 px-7 py-4 font-semibold uppercase tracking-[0.15em] text-xs transition-all duration-500 hover:border-accent/60 hover:text-accent hover:shadow-[0_0_20px_rgba(124,92,252,0.15)] active:scale-[0.97]"
                 >
-                  Let's Talk
+                  <Download size={16} className="group-hover:-translate-y-1 transition-transform duration-300" />
+                  Resume
                 </a>
               </div>
             </motion.div>
@@ -199,7 +222,7 @@ const HeroSection = () => {
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-            className="w-px h-8 bg-gradient-to-b from-accent/40 to-transparent"
+            className="w-px h-8 bg-gradient-to-b from-accent/50 to-transparent"
           />
         </motion.div>
       </motion.div>

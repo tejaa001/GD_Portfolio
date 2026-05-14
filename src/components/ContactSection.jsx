@@ -1,20 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Mail, Phone } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight } from 'lucide-react';
 
-// Youtube & Instagram not exported by installed lucide-react — inline SVGs used
-const YoutubeIcon = ({ size = 16, className = '' }) => (
+const GithubIcon = ({ size = 24, className = '' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M22.54 6.42A2.78 2.78 0 0 0 20.6 4.47C18.88 4 12 4 12 4s-6.88 0-8.6.47A2.78 2.78 0 0 0 1.46 6.42 29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.4 19.53C5.12 20 12 20 12 20s6.88 0 8.6-.47a2.78 2.78 0 0 0 1.94-1.95A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z" />
-    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+    <path d="M9 18c-4.51 2-5-2-7-2"></path>
   </svg>
 );
 
-const InstagramIcon = ({ size = 16, className = '' }) => (
+const LinkedinIcon = ({ size = 24, className = '' }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
   </svg>
 );
 
@@ -31,11 +30,11 @@ const ContactSection = () => {
           className="mb-12"
         >
           <span className="font-sans text-accent tracking-widest uppercase text-xs font-bold mb-6 flex items-center justify-center gap-4 opacity-80">
-            <span className="w-8 h-px bg-current"></span> Let's Create <span className="w-8 h-px bg-current"></span>
+            <span className="w-8 h-px bg-current"></span> What's Next? <span className="w-8 h-px bg-current"></span>
           </span>
           <h2 className="font-display text-[10vw] md:text-8xl font-bold uppercase tracking-tighter mt-6 mb-10 max-w-4xl mx-auto leading-[0.85]">
-            Ready to <br />
-            <span className="text-transparent border-text-white drop-shadow-md italic">Collaborate?</span>
+            Let's Build <br />
+            <span className="text-transparent border-text-white drop-shadow-md italic">Something.</span>
           </h2>
         </motion.div>
         
@@ -47,7 +46,7 @@ const ContactSection = () => {
           className="flex flex-col md:flex-row gap-6 mb-32"
         >
           <a 
-            href="mailto:saquibshaikh471@gmail.com"
+            href="mailto:tejasbhaleraodev@gmail.com"
             className="group flex items-center justify-center gap-3 bg-primary text-background px-8 py-5 font-bold uppercase tracking-[0.2em] text-xs hover:bg-accent transition-colors duration-500"
           >
             <Mail size={16} />
@@ -55,26 +54,26 @@ const ContactSection = () => {
           </a>
 
           <a 
-            href="tel:+919325149747"
+            href="tel:+918793228225"
             className="group flex items-center justify-center gap-3 border border-white/10 text-primary px-8 py-5 font-bold uppercase tracking-[0.2em] text-xs hover:border-accent hover:text-accent transition-all duration-500"
           >
             <Phone size={16} />
-            Call Me
+            +91 8793228225
           </a>
         </motion.div>
         
         {/* Footer / Socials */}
         <div className="w-full border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="font-sans text-xs text-muted uppercase tracking-widest">
-            © {new Date().getFullYear()} Saquib Shaikh. All rights reserved.
+            © {new Date().getFullYear()} Tejas Bhalerao. All rights reserved.
           </p>
           
           <div className="flex flex-wrap justify-center gap-8">
-            <a href="https://www.youtube.com/@0filtertv" target="_blank" rel="noreferrer" className="text-muted hover:text-white transition-colors flex items-center gap-2 font-sans text-xs uppercase tracking-widest group">
-              <YoutubeIcon size={16} className="group-hover:text-red-500 transition-colors" /> YouTube <ArrowUpRight size={12} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            <a href="https://linkedin.com/in/tejas-bhalerao" target="_blank" rel="noreferrer" className="text-muted hover:text-[#0077B5] transition-colors flex items-center gap-2 font-sans text-xs uppercase tracking-widest group">
+              <LinkedinIcon size={16} className="group-hover:text-[#0077B5] transition-colors" /> LinkedIn <ArrowUpRight size={12} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
-            <a href="https://www.instagram.com/imsaquib2" target="_blank" rel="noreferrer" className="text-muted hover:text-white transition-colors flex items-center gap-2 font-sans text-xs uppercase tracking-widest group">
-              <InstagramIcon size={16} className="group-hover:text-accent transition-colors" /> Instagram <ArrowUpRight size={12} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+            <a href="https://github.com/tejaa001" target="_blank" rel="noreferrer" className="text-muted hover:text-white transition-colors flex items-center gap-2 font-sans text-xs uppercase tracking-widest group">
+              <GithubIcon size={16} className="group-hover:text-white transition-colors" /> GitHub <ArrowUpRight size={12} className="opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>
           </div>
         </div>

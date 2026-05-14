@@ -1,0 +1,44 @@
+Tejas Bhalerao
+# tejasbhaleraodev@gmail.com  +91 8793228225 ï linkedin.com/in/tejas-bhalerao § github.com/tejaa001
+Professional Summary
+Creative and detail-oriented Frontend & UI Designer with hands-on experience designing responsive digital interfaces and
+visual assets using React.js, Figma, Canva, and Tailwind CSS. Passionate about creating engaging user experiences, clean
+layouts, and visually impactful designs across web and digital platforms. Skilled in transforming ideas and mockups into
+modern, user-friendly interfaces while maintaining consistency, accessibility, and brand aesthetics. Quick learner with
+strong collaboration skills and enthusiasm for multimedia, creative storytelling, and performance-focused design.
+Education
+Bachelor of Computer Application (BCA), Sandip University, Nashik Sept 2022 – May 2025
+• CGPA: 7.72/ 10.0
+Higher Secondary Certificate, Mahatma Basveshwar College, Latur April 2020 – May 2022
+Secondary School Certificate, Twinkle Land English School, Latur June 2019 – March 2020
+Experience
+Frontend Developer Intern, Denkfabrik Tech Solutions LLP, Nashik December 2024 – July 2025
+• Designed and developed responsive web interfaces with a strong focus on visual consistency and user experience.
+• Collaborated with designers to convert Figma mockups into modern and pixel-perfect UI components.
+• Created reusable UI sections, banners, layouts, and interactive components using React.js and Tailwind CSS.
+• Worked on improving interface accessibility, responsiveness, typography, spacing, and overall visual presentation.
+• Assisted in creating creative assets and UI improvements for web-based projects while following modern design trends.
+• Participated in Agile team discussions, design reviews, and version control workflows using Git and GitHub.
+Projects
+Turf Booking System UI
+• Designed and developed a modern sports turf booking interface with responsive layouts and intuitive user experience.
+• Created visually engaging UI sections including booking cards, schedules, navigation, and mobile-friendly screens.
+• Used Tailwind CSS and React.js to build reusable and aesthetically consistent components.
+• Focused on clean typography, spacing, accessibility, and smooth interaction design.
+• Technologies used: React.js, Tailwind CSS, JavaScript, Figma.
+RentalHub – Rental Management System
+• Designed responsive and visually engaging UI layouts for property and tenant management workflows.
+• Created reusable frontend components and dashboard interfaces using React.js and Tailwind CSS.
+• Focused on clean typography, spacing, accessibility, and user-friendly interaction design.
+• Applied UI/UX principles to improve visual storytelling and organized presentation of information.
+• Technologies used: React.js, Tailwind CSS, Figma, Canva, JavaScript, ASP.NET Core Web API.
+Technologies
+Design Tools: Figma, Canva, Adobe Photoshop (Basics)
+Frontend & UI Development: React.js, HTML5, CSS3, Tailwind CSS, JavaScript
+Creative Skills: UI/UX Design, Responsive Design, Visual Storytelling, Typography, Layout Design
+Tools & Collaboration: Git, GitHub, Postman
+Awards & Achievements
+• NASA Space Apps Challenge – 2024: Participated in the global hackathon and contributed innovative frontend
+solutions for real-world space and earth challenges.
+• Winjit Tech Fest – 2024: Represented the university and showcased frontend prototyping skills during high-pressure
+team-based tech challenges.

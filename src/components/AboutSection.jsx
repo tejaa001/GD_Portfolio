@@ -1,38 +1,47 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
-  Video, 
+  Code, 
   Layers, 
-  Scissors, 
-  Palette, 
-  Image, 
-  Sparkles, 
-  Type, 
-  Aperture, 
-  Activity, 
-  Music, 
-  Clock, 
-  Layout 
+  PenTool, 
+  Smartphone, 
+  Monitor, 
+  Cpu, 
+  Database,
+  Globe,
+  Layout,
+  Type,
+  GitBranch
 } from 'lucide-react';
 
+const FigmaIcon = ({ size = 24, className = '' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"></path>
+    <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"></path>
+    <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z"></path>
+    <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"></path>
+    <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"></path>
+  </svg>
+);
+
 const skills = [
-  { name: "Premiere Pro", icon: Video },
-  { name: "After Effects", icon: Layers },
-  { name: "CapCut", icon: Scissors },
-  { name: "DaVinci Resolve", icon: Palette },
-  { name: "Photoshop", icon: Image },
-  { name: "VFX", icon: Sparkles },
-  { name: "Subtitles", icon: Type },
-  { name: "Color Grading", icon: Aperture },
-  { name: "Motion Graphics", icon: Activity },
-  { name: "Sound Design", icon: Music },
-  { name: "Pacing & Rhythm", icon: Clock },
-  { name: "Narrative Structure", icon: Layout },
+  { name: "React.js", icon: Code },
+  { name: "Tailwind CSS", icon: PenTool },
+  { name: "JavaScript", icon: Cpu },
+  { name: "Figma", icon: FigmaIcon },
+  { name: "Canva", icon: Layers },
+  { name: "Responsive Design", icon: Smartphone },
+  { name: "UI/UX Design", icon: Monitor },
+  { name: "HTML5/CSS3", icon: Globe },
+  { name: "Typography", icon: Type },
+  { name: "Layout Design", icon: Layout },
+  { name: "Git & GitHub", icon: GitBranch },
+  { name: "Postman", icon: Database },
 ];
 
 const AboutSection = () => {
   const { scrollYProgress } = useScroll();
-  const x = useTransform(scrollYProgress, [0.4, 0.8], [200, -200]);
+  const x = useTransform(scrollYProgress, [0.3, 0.8], [150, -300]);
 
   return (
     <section id="about" className="py-32 px-6 md:px-12 bg-background relative overflow-hidden flex items-center min-h-[80vh]">
@@ -41,8 +50,8 @@ const AboutSection = () => {
         style={{ x }}
         className="absolute left-0 top-1/2 -translate-y-1/2 w-[200%] overflow-hidden pointer-events-none opacity-[0.02] flex z-0"
       >
-        <h2 className="font-display text-[25vw] font-bold whitespace-nowrap uppercase tracking-tighter">
-          VISIONARY EDIT VISIONARY EDIT
+        <h2 className="font-display text-[20vw] font-bold whitespace-nowrap uppercase tracking-tighter">
+          UI · UX · REACT · DESIGN · CODE · 
         </h2>
       </motion.div>
 
@@ -58,14 +67,14 @@ const AboutSection = () => {
           >
             <div className="w-16 h-px bg-accent mb-8"></div>
             <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tight mb-8">
-              I transform raw footage into visual <span className="text-accent italic">stories.</span>
+              I craft interfaces that feel <span className="text-accent italic">intuitive</span> and look <span className="text-accent italic">stunning.</span>
             </h2>
             <div className="space-y-6 text-muted font-light text-lg">
               <p>
-                Every frame matters. I don't just cut clips together; I craft tempo, build tension, and establish rhythm to ensure the viewer's eyes are locked on the screen.
+                As a Frontend & UI Designer, I bridge the gap between design and engineering. I specialize in transforming ideas and mockups into modern, user-friendly interfaces.
               </p>
               <p>
-                From YouTube documentaries to high-paced Instagram reels, my editing philosophy revolves around <span className="text-white font-medium">keeping attention</span> and <span className="text-white font-medium">evoking emotion</span>.
+                My approach focuses on <span className="text-white font-medium">clean layouts</span>, <span className="text-white font-medium">accessibility</span>, and <span className="text-white font-medium">brand aesthetics</span> to ensure the user experience is both engaging and seamless across all digital platforms.
               </p>
             </div>
           </motion.div>
@@ -92,7 +101,7 @@ const AboutSection = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + (i * 0.05) }}
                     key={i} 
-                    className="flex items-center gap-3 px-5 py-4 bg-background border border-white/5 text-sm font-medium hover:border-accent hover:text-accent transition-all duration-500 font-sans tracking-wide group/skill shadow-sm hover:shadow-accent/10"
+                    className="flex items-center gap-3 px-5 py-4 bg-background border border-white/5 text-sm font-medium hover:border-accent hover:text-accent transition-all duration-500 font-sans tracking-wide group/skill shadow-sm hover:shadow-[0_0_15px_rgba(124,92,252,0.15)]"
                   >
                     <skill.icon size={16} className="text-accent/60 group-hover/skill:text-accent group-hover/skill:scale-110 transition-all duration-500" />
                     <span>{skill.name}</span>
@@ -101,13 +110,13 @@ const AboutSection = () => {
               </div>
               
               <div className="mt-16 pt-8 border-t border-white/5 flex items-center justify-between">
-                <span className="text-xs text-muted uppercase tracking-wider font-sans">Workflow Integration</span>
+                <span className="text-xs text-muted uppercase tracking-wider font-sans">Development Lifecycle</span>
                 <div className="flex gap-2">
-                  {/* Indicators mimicking an editing timeline */}
+                  {/* Indicators mimicking process flow */}
                   <span className="w-3 h-1 bg-white/20"></span>
                   <span className="w-8 h-1 bg-white/40"></span>
                   <span className="w-4 h-1 bg-white/70"></span>
-                  <span className="w-6 h-1 bg-accent shadow-[0_0_10px_rgba(0,240,255,0.5)]"></span>
+                  <span className="w-6 h-1 bg-accent shadow-[0_0_10px_rgba(124,92,252,0.5)]"></span>
                 </div>
               </div>
             </div>
